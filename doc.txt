@@ -1,0 +1,455 @@
+    Version Control System / Source Code Management / Revision Control System / Software Configuration Management
+
+V.C.S. :-- It is one type of Software and it helps to Software Developer to work combined together and maintain complete history of their work
+
+Advantage of V.C.S  :---
+
+1) Allow multiple people to work on same file ( Collaboration )
+
+2) Tracks changes and also we have made those changes 
+
+3) Backup
+
+Various types of V.C.S/S.C.M  :-- CVS, SVN, GIT, Mercurial, Perforce, IBM Rational ClearCase, Google Code and BitKeeper
+
+                                      GIT
+
+    ----    V.V.I video for " Git "
+
+Git Hub :-- It is a " Website " where your can upload a copy of Git Repository, It is Git Repository hosts " Service " as well as 
+
+offers " Distributed Verson Control " and " Source Code Management " functionality of git and also added a new features.
+
+Git :-- It is a one of the " Version Control System " especially it comes under " Distributed V.C.S " and also it is a Open Source
+
+                                 Features of Git :---
+
+1) Distributed
+
+2) Compatible ( Mainly comes under migrate )
+
+3) Non - linear ( It comes under rebase )
+
+4) Branching  ( Parallel development )
+
+5) Lightweight
+
+6) Speed 
+
+7) Open-Source
+
+8) Reliable ( If any crashes or brun or damage )
+
+9) Secure
+
+10) Econamic
+
+                                          Git workflow /life cycle :--
+
+git pull/clone --- git branch --- git checkout --- git add --- git commit --- git merge --- git push
+
+Repository :-- It is a heart of any " O.S " where developer can store files not only files it maintain history also
+
+Types of Repositorys  :-- 1) Local repository  2) Remote Repository
+
+PULL :-- All the new files and change files from central repository to local repository in your master branch.
+
+Fetch :-- All the new files and change files directly from central repository to local repository but not in your master branch.
+
+PULL  == Fetch + Merge
+
+Trunk :-- It is a main branch in git 
+
+Stash :-- It is nothing but " Unfinished changes " that you can reapply at any time.
+
+HEAD  :-- It is a " Pointer " and it gives current commit history of working branch
+
+Git is one of " Trunk based Development " means currently you are working on master branch with base version of 1.1 but expecting 2.1 then 
+
+create one " new branch " whenever you think it working fine then merge the branch in " master branch " finally you can " push " in Git-Hub
+
+this is called " Trunk Based Development " ( or ) " Parallel Development "
+
+Same scenario of " Blue - Green Deployment " process also
+
+                                                           
+                                       Difference b/w SVN and GIT
+
+                              Subversion                             Git
+
+                1) It comes under Centralized VCS             1) It comes under Distributed VCS
+
+                2) We can download specified piece of code    2) We can download entire repository  
+            
+                3) It have Local repository                   2) It have Central repository             
+ 
+                4) Non Reliable                               3) Reliable
+
+                5) Very slow like Tortoise                    4) Very fast
+
+                6) Here we don't have Back-up                 5) Here we have Back-up
+
+                                                                          
+                                          Real time Scenario
+
+
+
+apt-get install git -y / yum install git -y  :--- Git installation
+
+git --version
+
+After that set configuration values/variables like
+
+git config --global user.name "sreeja407"
+
+git config --global user.email "b.sreeja407@gmail.com"
+
+git config --list
+
+                                          Need Help?
+
+git help config
+
+git config --help
+
+git init   :-- creating for "local repository" in command line
+
+git status :-- It shows " Untracked Files " means it doesn't add files in git repository
+
+                                        Where we now?
+
+Working Directory :-- Here we can create/write the files but not add a files in .git repository ( local repository ) means " Untracked files "
+
+Staging Area      :-- Whatever files we have those files are added to .git repository but not commited
+
+.git repository   :-- Here " add + commit " the files in .git repository ( local repository ) 
+
+                            We can create multiple " .txt " files then check
+
+git add file1.txt :-- If you want add perticular file then follow this command
+
+git status        :-- Observer the o/p
+
+git add -A        :-- If you want add all files at a time then follow this command
+
+git status        :-- Observer the o/p
+
+          If you add some files in staging area but not commited then if you want to remove perticular .txt files from staging area then
+
+git reset file1.txt
+
+git status        :-- Observer the o/p
+
+git commit -a -m "write any discription" :-- Means commit the changed files in your local repository ( -a :-- all files including not add files also, -m :-- message )
+
+git commit -m "write any discription" :-- Means commit the changed files in your local repository
+
+git status        :-- Observer the o/p
+
+git log           :-- It gives all current commit history 
+
+git clone https://github.com/b.sreeja407/practise.git :-- To retrive entire " Remote Repository " through URL from central to local machine
+
+ls -lta           :-- checkit out
+
+cd practise
+
+cat README.md     :-- It shows your repository description
+
+                             If you want " Remote Repository " information then follow the below commands like
+
+git remote -v     :-- It gives location information of the remote repository
+
+git branch -a     :-- It shows how many branches are present in remote repository ( *master )
+
+                  If any body changes ( files ) then you want to identifie before without " commit the file " then follow commands like
+
+                  For example i change file1.txt but i didn't commit the file then this situation
+
+git diff          :-- Observer the o/p
+
+git status
+
+git add -A
+
+git status
+
+git commit -m " Modifed the changes "  :-- Observer the o/p information
+
+before that you need to add " origin " to remote repository for identification purpose means which one " remote repository " and which one " local repository " like
+
+git remote add origin https://github.com/b.sreeja407/practise.git
+
+git pull origin master  
+
+git push origin master  :-- Here whatever make changes you can push to " master repository "
+
+                                  Common Workflow for multiple developer using " Git "
+
+git branch Lord    :-- creating for branch 
+
+git branch         :-- It shows how many branches are present
+
+                                  If you want to work on perticular branch then
+
+git checkout Lord  :-- It shifted to " Lord " branch
+
+git branch         :-- Observer the o/p
+
+vi test.txt
+
+git add test.txt
+
+git commit -m "for branch"
+
+git push origin Lord
+
+git branch -a          :-- Observer the o/p
+
+git checkout master    :-- It switches to " Master "  branch
+
+git pull origin master :-- First check if any body make changes are not 
+
+git branch --merged    :-- merge multiple branches to " Master " branch
+
+git merge Lord         :-- If you want merge perticular branch then follow the command
+
+git push origin master :-- Finally whatever made changes you can then push to " Master " branch
+
+git branch --merged
+
+git branch -d Lord     :-- If you want to " Delete " perticular branch then follow the command
+
+git branch -a          :-- Observer the o/p
+
+git push origin --delete Lord  :-- It means permanently delete Lord branch in master
+
+git branch -a          :-- Observer the o/p
+
+                           Coming to Rebasing :-- It is also one type of merging ( To reduce more branches and much cleaner project )
+
+git checkout firstbranch
+
+create some more .txt files like
+
+vi god4.txt and vi god5.txt
+
+git add -A
+
+git commit -a -m "adding for rebasing"
+
+git checkout master  :-- Here not affected any files
+
+git checkout firstbranch
+
+git rebase master :-- Current branch firstbranch is up to date
+
+Then now it is affected or not
+
+git checkout master
+
+git rebase firstbranch :-- It affected all things in master
+
+                                   How to add " .ssh " file in command line like
+
+ssh-keygen
+
+After that goto " GitHub " like
+
+GitHub --- Settings --- SSH and GPG keys --- SSH keys
+
+Title :-- ssh3
+
+Key  :--  ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDwuSEQHtKVhSINZnXRH6RXHSBcUdLiFWffnJMk/tbrkpRciueA8MgJNdULFrAL/dVdCq/Zkw9YJWDPGTKI/
+          xLFJ6i94LjNWxNGJPH6dLHW3cK+iND9yxlnog6U++NojVejC798cQAzfQFahzuyOWpkFRdHO4HSKcFXv7Up1OUGR2fzS5t6DM1ZpoDAHU9qpYH9mJTpyIpnuHRcziboRyAc3RQw5I9urivOuPC+151isrWyd08jFk8BCO7MXkUuFewfl5rfjQbA/
+          FX/HzplpyADrPscuEbm7BDa/BRQbGsG03BiUnCzjO8G/q6JOPwKmA2eC8vlCOUWZzZpsvqPd/Ab root@Lord
+
+Finally Add SSH key
+
+After that goto command line like
+
+git checkout firstbranch
+
+git push origin firstbranch  :-- It totally affected on remote branch
+
+git checkout master
+
+git push origin master      :-- It shows affected on Git Hub
+
+How to Revert back in git
+
+One more .txt file create in command line like
+
+vi revert
+
+Hello!
+
+:wq!
+
+git add revert
+
+git commit -m "revert1"
+
+Once again change existing file like
+
+vi revert
+
+Hello! There
+
+:wq!
+
+git commit -a -m "revert2"
+
+Then once checkout like
+
+cat revert  :-- It shows full content
+
+git log
+
+Then take first 8 digit on your first commit like
+
+git checkout 7e926fd8 revert
+
+cat revert  :-- It shows first content what can you write
+
+                                    How to resolve " Merge Conflicts " in Git
+
+       ----   V.V.I video for " Merge Conflicts "
+
+                                  1) Centralized Work Flow ( Example like it done on same " project " )
+
+Make 2 diff server's like Lord  and Lord1
+
+You can install git on both servers
+
+git init
+
+git remote add origin https://github.com/b.sreeja407/God.git
+
+After that you can send to master same file it comes conflict like
+
+To https://github.com/b.sreeja407/God.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://github.com/mallikarjunareddy1/God.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+                                         How to resolve the above error like
+
+git status
+
+git mergetool :-- It shows how many developers are working on same repository
+
+git rebase --continue
+
+git push origin master
+
+                                 2) Feature Branch Workflow ( Example like it done on same " feature " )
+
+If you have multiple developers work on same application
+
+Then Developer1 some modification features send to repository like
+
+git branch feature1
+
+git checkout feature1
+
+vi additionl1
+
+Addition purpose
+
+:wq!
+
+git add feature1
+
+git commit -m "adding a feature1"
+
+git push origin feature1
+
+After that checkit out in " Git-Hub " whenever it appear then do in git-hub only
+
+click on Pull request1 on top --- New pull request ---
+
+base:master --- compare:master ( extract then click on feature1 ) ---
+
+Create pull request  :-- Add a comment --- click on Create pull request
+
+                                                      Real time Interview Questions
+
+1. Git Hooks Concept :--
+
+Whenever there is any event that occurs in git, event like push, receive and commit, git runs few scripts which are referred to as hooks.
+
+If you want to see hook's in your git then go to path like
+
+.git/hooks
+
+Here's a full list of hooks you can attach scripts to:
+
+applypatch-msg
+pre-applypatch
+post-applypatch
+pre-commit
+prepare-commit-msg
+commit-msg
+post-commit
+pre-rebase
+post-checkout
+post-merge
+pre-receive
+update
+post-receive
+post-update
+pre-auto-gc
+post-rewrite
+pre-push
+
+Why should I care and Preferred Git Hook's ?
+
+Git hooks can greatly increase your productivity as a developer.
+
+2. Git Stash Concept ?
+
+Use git stash when you want to record the current state of the working directory and the index, but want to go back to a clean working directory.
+
+The command saves your local modifications away and reverts the working directory to match the HEAD commit.
+
+Git stash Command's s/b follow like :--
+
+git stash list
+
+git stash show
+
+git stash apply
+
+git stash push
+
+Git Bisect Concept
+
+You use it by first telling it a "bad" commit that is known to contain the bug, and a "good" commit that is known to be before the bug was introduced.
+
+Then git bisect picks a commit between those two endpoints and asks you whether the selected commit is "good" or "bad".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
